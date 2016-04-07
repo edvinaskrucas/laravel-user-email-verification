@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-0": {
-      "Krucas\\LaravelUserMailVerification": "src/"
+      "Krucas\\LaravelUserEmailVerification": "src/"
     }
   },
   "minimum-stability": "dev"
