@@ -2,11 +2,14 @@
 
 namespace Krucas\LaravelUserEmailVerification\Console;
 
+use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Console\Command;
 use Illuminate\Support\Composer;
 
 class MakeVerificationCommand extends Command
 {
+    use AppNamespaceDetectorTrait;
+
     /**
      * The console command name.
      *
@@ -46,6 +49,13 @@ class MakeVerificationCommand extends Command
     public function fire()
     {
         $this->createMigrations();
+
+        $this->info('Installed VerifyController');
+
+        file_put_contents(
+            app_path('Http/Controllers/Auth/VerifyController.php'),
+            $this->compileControllerStub()
+        );
 
         $this->composer->dumpAutoloads();
     }
@@ -96,5 +106,19 @@ class MakeVerificationCommand extends Command
         $path = $this->laravel->databasePath().'/migrations';
 
         return $this->laravel['migration.creator']->create($name, $path);
+    }
+
+    /**
+     * Compiles the VerifyController stub.
+     *
+     * @return string
+     */
+    protected function compileControllerStub()
+    {
+        return str_replace(
+            '{{namespace}}',
+            $this->getAppNamespace(),
+            file_get_contents(__DIR__.'/stubs/controllers/VerifyController.stub')
+        );
     }
 }
