@@ -1,0 +1,27 @@
+{
+  "name": "edvinaskrucas/laravel-user-email-verification",
+  "keywords": ["laravel", "user verification", "email verification", "user email verification"],
+  "description": "Laravel Package for easier user email verification.",
+  "authors": [
+    {
+      "name": "Edvinas Kručas",
+      "email": "edv.krucas@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php" : "^5.5|^7.0",
+    "illuminate/support": "^5.2",
+    "illuminate/console": "^5.2",
+    "illuminate/database": "^5.2",
+    "illuminate/filesystem": "^5.2",
+    "illuminate/http": "^5.2",
+    "illuminate/mail": "^5.2"
+  },
+  "autoload": {
+    "psr-0": {
+      "Krucas\\LaravelUserMailVerification": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
