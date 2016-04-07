@@ -57,6 +57,10 @@ class MakeVerificationCommand extends Command
             $this->compileControllerStub()
         );
 
+        $this->info('Updated routes.php');
+
+        $this->appendRoutes();
+
         $this->composer->dumpAutoloads();
     }
 
@@ -119,6 +123,21 @@ class MakeVerificationCommand extends Command
             '{{namespace}}',
             $this->getAppNamespace(),
             file_get_contents(__DIR__.'/stubs/controllers/VerifyController.stub')
+        );
+    }
+
+    /**
+     * Append routes file.
+     *
+     * @return void
+     */
+    protected function appendRoutes()
+    {
+        $path = app_path('Http/routes.php');
+
+        file_put_contents(
+            $path,
+            file_get_contents($path)."\n\n".file_get_contents(__DIR__.'/stubs/routes.stub')
         );
     }
 }
