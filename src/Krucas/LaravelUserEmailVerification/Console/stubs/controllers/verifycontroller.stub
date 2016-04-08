@@ -15,7 +15,7 @@ class VerifyController extends Controller
     public function __construct()
     {
         if (config('verification.verify')) {
-            $this->middleware('guest');
+            $this->middleware($this->guestMiddleware());
         }
     }
 }
