@@ -10,4 +10,11 @@ interface RequiresEmailVerification
      * @return string
      */
     public function getEmailForVerification();
+
+    /**
+     * Determine if user is verified or not.
+     *
+     * @return bool
+     */
+    public function isUserEmailVerified();
 }

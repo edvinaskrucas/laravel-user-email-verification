@@ -13,4 +13,14 @@ trait RequiresEmailVerification
     {
         return $this->email;
     }
+
+    /**
+     * Determine if user is verified or not.
+     *
+     * @return bool
+     */
+    public function isUserEmailVerified()
+    {
+        return (bool) $this->verified;
+    }
 }
