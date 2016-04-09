@@ -122,7 +122,7 @@ class MakeVerificationCommand extends Command
         return str_replace(
             '{{namespace}}',
             $this->getAppNamespace(),
-            file_get_contents(__DIR__.'/stubs/controllers/VerifyController.stub')
+            file_get_contents(__DIR__.'/stubs/controllers/verifycontroller.stub')
         );
     }
 
