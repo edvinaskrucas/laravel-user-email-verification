@@ -1,5 +1,8 @@
 # User email verification for Laravel 5
 
+
+[![Build Status](https://travis-ci.org/edvinaskrucas/laravel-user-email-verification.png?branch=master)](https://travis-ci.org/edvinaskrucas/laravel-user-email-verification)
+
 ---
 
 ## Installation
