@@ -27,5 +27,10 @@
     "psr-0": {
       "Krucas\\LaravelUserEmailVerification": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Krucas\\LaravelUserEmailVerification\\Test\\": "tests"
+    }
   }
 }

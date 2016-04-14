@@ -1,5 +1,7 @@
 <?php
 
+namespace Krucas\LaravelUserEmailVerification\Test;
+
 use Mockery as m;
 use Krucas\LaravelUserEmailVerification\VerificationBroker;
 
