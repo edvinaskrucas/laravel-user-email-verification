@@ -3,6 +3,7 @@
 namespace Krucas\LaravelUserEmailVerification;
 
 use Illuminate\Support\ServiceProvider;
+use Krucas\LaravelUserEmailVerification\Console\ClearVerificationTokensCommand;
 use Krucas\LaravelUserEmailVerification\Console\MakeVerificationCommand;
 use Krucas\LaravelUserEmailVerification\Contracts;
 
@@ -78,7 +79,12 @@ class UserEmailVerificationServiceProvider extends ServiceProvider
             return new MakeVerificationCommand($app['composer']);
         });
 
+        $this->app->singleton('command.verification.clear', function ($app) {
+            return new ClearVerificationTokensCommand();
+        });
+
         $this->commands('command.verification.make');
+        $this->commands('command.verification.clear');
     }
 
     /**
@@ -90,6 +96,7 @@ class UserEmailVerificationServiceProvider extends ServiceProvider
     {
         return [
             'command.verification.make',
+            'command.verification.clear',
             'auth.verification',
             'auth.verification.broker',
             VerificationBrokerManager::class,

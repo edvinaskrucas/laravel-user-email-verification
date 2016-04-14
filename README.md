@@ -1,5 +1,8 @@
 # User email verification for Laravel 5
 
+
+[![Build Status](https://travis-ci.org/edvinaskrucas/laravel-user-email-verification.png?branch=master)](https://travis-ci.org/edvinaskrucas/laravel-user-email-verification)
+
 ---
 
 ## Installation
@@ -75,3 +78,15 @@ php artisan migrate
 
 After all these steps you need to adjust default auth controller provided by Laravel, these adjustments
 will enable authentication controller to send verification email and will not allow non-verified users to login.
+
+### Clear expired tokens
+
+Package comes with useful command to clear expired tokens, just replace ```{broker}``` with your broker name.
+
+```
+php artisan verification:clear-tokens {broker}
+```
+
+---
+
+More info can be found here: [http://www.krucas.com/2016/04/user-email-verification-for-laravel-5/](http://www.krucas.com/2016/04/user-email-verification-for-laravel-5/)

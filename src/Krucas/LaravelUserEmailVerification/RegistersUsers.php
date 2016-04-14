@@ -22,9 +22,7 @@ trait RegistersUsers
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
-            $this->throwValidationException(
-                $request, $validator
-            );
+            $this->throwValidationException($request, $validator);
         }
 
         $user = $this->create($request->all());
@@ -54,6 +52,16 @@ trait RegistersUsers
     public function getBroker()
     {
         return property_exists($this, 'broker') ? $this->broker : null;
+    }
+
+    /**
+     * Get the guard to be used during verification.
+     *
+     * @return string|null
+     */
+    protected function getGuard()
+    {
+        return property_exists($this, 'guard') ? $this->guard : null;
     }
 
     /**
