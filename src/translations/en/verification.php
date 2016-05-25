@@ -16,6 +16,6 @@ return [
     'sent' => 'We have e-mailed your verification link!',
     'token' => 'This verification token is invalid.',
     'user' => "We can't find a user with that e-mail address.",
-    'subject' => 'You account verification link',
+    'subject' => 'Your account verification link',
 
 ];
