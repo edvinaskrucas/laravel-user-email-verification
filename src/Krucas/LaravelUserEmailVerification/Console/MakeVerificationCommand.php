@@ -57,7 +57,7 @@ class MakeVerificationCommand extends Command
             $this->compileControllerStub()
         );
 
-        $this->info('Updated routes.php');
+        $this->info('Updated web routes.');
 
         $this->appendRoutes();
 
@@ -133,7 +133,7 @@ class MakeVerificationCommand extends Command
      */
     protected function appendRoutes()
     {
-        $path = app_path('Http/routes.php');
+        $path = base_path('routes/web.php');
 
         file_put_contents(
             $path,
