@@ -2,13 +2,13 @@
 
 namespace Krucas\LaravelUserEmailVerification\Console;
 
-use Illuminate\Console\AppNamespaceDetectorTrait;
+use Illuminate\Console\DetectsApplicationNamespace;
 use Illuminate\Console\Command;
 use Illuminate\Support\Composer;
 
 class MakeVerificationCommand extends Command
 {
-    use AppNamespaceDetectorTrait;
+    use DetectsApplicationNamespace;
 
     /**
      * The console command name.
